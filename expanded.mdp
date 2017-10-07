@@ -6,8 +6,7 @@ integrator               = md-vv
 tinit                    = 0
 dt                       = 0.001
 
-; 21 ns.  1 ns per lambda
-nsteps               = 1500000
+nsteps               = 105000000
 ; mode for center of mass motion removal = 
 
 ; We remove center of mass motion.  In periodic boundary conditions, the center of mass motion is spurious; the periodic system is the same in all translational directions.
