@@ -1,0 +1,62 @@
+include                 =  -I/mnt/ceph/cmira/pmxffs/mutff45
+
+integrator               = md-vv
+tinit                    = 0
+dt                       = 0.001
+
+nsteps               = 10500000 ; 1 ns per lambda
+
+comm-mode                = Linear
+nstcomm                  = 1
+
+nstlog                   = 10000
+nstenergy                = 10000
+
+nstlist                  = 20
+ns_type                  = grid
+pbc                      = xyz
+rlist                    = 1.15
+coulombtype              = Reaction-Field
+coulomb-modifier         = Potential-shift-Verlet
+rcoulomb                 = 0.9
+cutoff-scheme            = Verlet
+
+vdw-type                 = Cut-off
+rvdw-switch              = 0.85
+rvdw                     = 0.9
+fourierspacing           = 0.12
+pme_order                = 4
+ewald_rtol               = 1e-04
+ewald_geometry           = 3d
+epsilon_surface          = 0
+
+DispCorr                 = EnerPres
+
+tc-grps                  = System
+tcoupl                   = Nose-Hoover
+tau_t                    = 0.1 ; can increase stability for smaller ligands to have a low tau_t 
+ref_t                    = 300
+nsttcouple               = 1 ; can increase stability for smaller ligands 
+Pcoupl                   = no
+tau_p                    = 5.0
+compressibility          = 4.5e-5
+ref_p                    = 1.01325
+nstpcouple               = 1 ; can increase stability for smaller ligands  
+constraints              = all-bonds
+constraint-algorithm     = shake    
+
+;--------------------
+; Free energy parameters
+; Use expanded ensemble methods
+free-energy              = expanded
+sc-power                 = 1  
+sc-r-power               = 6
+sc-alpha                 = 0.5
+init-lambda-state        = 0  
+coul-lambdas             = 0.0 0.2 0.4 0.6 0.8 1.0 1.0 1.0 1.0 1.0 1.0 1.00 1.0 1.00 1.0 1.00 1.0 1.00 1.0 1.00 1.0
+vdw-lambdas              = 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.2 0.3 0.4 0.5 0.55 0.6 0.65 0.7 0.75 0.8 0.85 0.9 0.95 1.0
+nstdhdl                  = 1
+nstexpanded              = 1
+nstcalcenergy            = 1 
+lmc-move                  = aim
+separate-dhdl-file       = no
