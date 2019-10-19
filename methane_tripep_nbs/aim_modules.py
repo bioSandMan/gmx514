@@ -239,7 +239,7 @@ def import_pickle(root, runs, prefix):
         # import the pickled resuls from pymbar
         location = root+"/{0}/{1}.pickle".format(j,prefix)
         with open(location, 'rb') as handle:
-            unserialized_data = pickle.load(handle)
+            unserialized_data = pickle.load(handle, encoding="latin1")
 
         # convert the values from k_BT to kJ/mol
         # store in a new dictionary
