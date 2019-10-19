@@ -1,0 +1,1 @@
+This folder contains the files necessary to modify GROMACS 5.1.4 to use AIM. The paths.txt file indicates the location to (re)place the files. 
