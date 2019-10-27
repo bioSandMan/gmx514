@@ -1,13 +1,12 @@
-define                  =  -DPOSRES
 integrator              =  md
-dt                      =  0.001
+dt                      =  0.002
 nsteps                  =  500000  ; total 1 000 ps
 
-nstlog                  =  0
-nstenergy               =  0
-nstxout                 =  0
-nstxout-compressed      =  0
-nstvout                 =  0
+nstlog                  =  200
+nstenergy               =  200
+nstxout                 =  200
+nstxout-compressed      =  200
+nstvout                 =  200
 nstfout                 =  0
 nstcalcenergy           =  0
 
@@ -27,7 +26,7 @@ constraint_algorithm    =  lincs
 lincs_order             =  8
 
 tcoupl                  =  v-rescale
-tc_grps                 =  Protein  Non-Protein
+tc_grps                 =  Other    Water
 tau_t                   =  0.1        0.1
 ref_t                   =  300        300
 
@@ -35,9 +34,3 @@ pcoupl                  =  Berendsen
 tau_p                   =  1.0
 compressibility         =  4.5e-5
 ref_p                   =  1.01325  ;1 atm
-refcoord_scaling        =  all
-
-annealing               =  single           single
-annealing-npoints       =  3                3
-annealing-time          =  0   500 1000     0   500 1000
-annealing-temp          =  100 300 300      100 300 300

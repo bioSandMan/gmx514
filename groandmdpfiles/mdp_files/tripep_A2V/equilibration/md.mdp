@@ -1,6 +1,7 @@
+include                 =  -I/mnt/cmci/cmira/pmxffs/mutff45
 integrator              =  md
-dt                      =  0.002
-nsteps                  =  500000  ; total 1 000 ps
+dt                      =  0.001
+nsteps                  =  5000000  ; total 5 000 ps
 
 nstlog                  =  200
 nstenergy               =  200
@@ -10,7 +11,7 @@ nstvout                 =  200
 nstfout                 =  0
 nstcalcenergy           =  0
 
-nstlist                 =  10
+nstlist                 =  40
 pbc                     =  xyz
 rlist                   =  1.0
 cutoff-scheme           =  verlet
