@@ -1,7 +1,7 @@
 # gmx514
 This repo contains the files and programs (snippets and full code) for my PhD thesis. 
 
-Clone the github repo somewhere on your local drivey ou will want to do this on a system with a gui since the jupyter notebook is an html app
+Clone the github repo somewhere on your local drive you will want to do this on a system with a gui since the jupyter notebook is an html app
 
 `git clone https://github.com/bioSandMan/gmx514.git`
 
